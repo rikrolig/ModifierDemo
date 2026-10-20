@@ -8,6 +8,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
@@ -38,17 +39,18 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun DemoScreen(modifier: Modifier = Modifier) {
-    val mymodifier = modifier
-        .padding(all = 10.dp)
+    val mymodifier = Modifier
         .border(width = 2.dp, color = Color.Black)
+        .padding(all = 10.dp)
+
+    val secondModifier = Modifier.height(100.dp)
 
     Column(modifier = modifier) {
-        Text(
-            "Hello Compose",
-            mymodifier,
-            fontSize = 40.sp,
-            fontWeight = FontWeight.Bold
-        )
+        val mymodifier = Modifier
+            .border(width = 2.dp, color = Color.Black)
+            .padding(all = 10.dp)
+
+        val secondModifier = Modifier.height(100.dp)
         CustomImage(
             image = R.drawable.vacation,
             modifier = Modifier.size(200.dp)
